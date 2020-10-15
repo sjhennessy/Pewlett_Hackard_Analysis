@@ -12,3 +12,14 @@ The purpose of this analysis is to determine the number of retiring employees pe
 ## Summary: Provide high-level responses to the following questions, then provide two additional queries or tables that may provide more insight into the upcoming "silver tsunami."
 ### How many roles will need to be filled as the "silver tsunami" begins to make an impact? 90,396 roles will need to be filled for the positions of senior engineer, senior staff, engineer, staff, technique leader, and assistant engineer. Only 2 manager roles will need to be filled. The HR department will need to start recruiting heavily to start filling the staff roles. A good method to fill roles is to offer employees a bonus if they recruit contacts to interview at Pewlett Hackard. A more substantial bonus can be awarded if the contact becomes an employee at the company.
 ### Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees? Yes, there are 1,550 employees that are eligible for the mentorship program. Assuming the 90,396 employees retire over a period of 10 years, each mentor would have 5 mentees every year for 10 years. If most of the employees start retiring in a 5-year period, then there would not be a sufficient number of mentors and the burden would be too great for the 1,550 eligible mentors.  
+### I suggest expanding mentorship eligibility to employees with birthdates in 1966, 1967, and 1968 in addition to the mentors born in 1965. This would greatly expand the number of mentors and the following code was programmed in pgAdmin:
+#### SELECT DISTINCT ON (emp_no) emp_no,
+#### first_name, last_name, birth_date, 
+#### from_date, to_date, 
+#### title
+#### INTO expand_mentorship
+#### FROM mentorship_eligibility
+#### WHERE (birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+#### AND (birth_date BETWEEN '1966-01-01' AND '1968-12-31')
+#### AND (to_date = '9999-01-01')
+#### ORDER BY emp_no;
