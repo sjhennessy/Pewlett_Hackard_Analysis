@@ -23,3 +23,4 @@ The purpose of this analysis is to determine the number of retiring employees pe
 #### AND (birth_date BETWEEN '1966-01-01' AND '1968-12-31')
 #### AND (to_date = '9999-01-01')
 #### ORDER BY emp_no;
+### Another table that would help management is to further study the senior engineer and senior staff roles to determine their retiring plans. These two roles account for 63.8% of the retiring employees. A survey could be distributed to the employees in these two roles and get more data about their planned year of retirement. This will give the HR department knowledge for number of people to hire each year. 
